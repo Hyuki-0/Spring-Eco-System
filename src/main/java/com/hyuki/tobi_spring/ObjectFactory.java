@@ -1,12 +1,12 @@
-package com.hyuki.tobi_spring.payment;
+package com.hyuki.tobi_spring;
 
 import com.hyuki.tobi_spring.exrate.CachedExRateProvider;
+import com.hyuki.tobi_spring.exrate.ExRateProvider;
 import com.hyuki.tobi_spring.exrate.SimpleExRateProvider;
 import com.hyuki.tobi_spring.exrate.WebApiExRateProvider;
+import com.hyuki.tobi_spring.payment.PaymentService;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 /*
  * SpringBoot의 Bean Factory 예시본

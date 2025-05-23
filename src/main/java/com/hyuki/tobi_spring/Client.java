@@ -1,6 +1,6 @@
-package com.hyuki.tobi_spring.payment;
+package com.hyuki.tobi_spring;
 
-import ch.qos.logback.core.util.TimeUtil;
+import com.hyuki.tobi_spring.payment.PaymentService;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +21,7 @@ public class Client {
     System.out.println(paymentService1.prepare(100L, "USD", BigDecimal.valueOf(50.7)));
     System.out.println("======================================================================\n");
 
-    TimeUnit.SECONDS.sleep(3);
+    TimeUnit.SECONDS.sleep(1);
     System.out.println(paymentService1.prepare(100L, "USD", BigDecimal.valueOf(50.7)));
     System.out.println("======================================================================");
 

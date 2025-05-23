@@ -1,12 +1,11 @@
 package com.hyuki.tobi_spring.exrate;
 
-import com.hyuki.tobi_spring.payment.ExRateProvider;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /*
- * TODO : Decorate 패턴 공부 필요
+ * TODO : Decorator Pattern
  * */
 public class CachedExRateProvider implements ExRateProvider {
 
@@ -24,7 +23,7 @@ public class CachedExRateProvider implements ExRateProvider {
     if (cachedExRate == null || cacheExpiryTime.isBefore(LocalDateTime.now())) {
       System.out.println("Cache Update");
       cachedExRate = target.getExRate(currency);
-      cacheExpiryTime = LocalDateTime.now().plusSeconds(3);
+      cacheExpiryTime = LocalDateTime.now().plusSeconds(1);
     }
 
     return cachedExRate;

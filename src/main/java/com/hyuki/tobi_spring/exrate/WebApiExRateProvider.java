@@ -2,7 +2,6 @@ package com.hyuki.tobi_spring.exrate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hyuki.tobi_spring.exrate.response.ExRateData;
-import com.hyuki.tobi_spring.payment.ExRateProvider;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -10,6 +9,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.stream.Collectors;
 
+/*
+* TODO : Strategy Pattern
+* */
 public class WebApiExRateProvider implements ExRateProvider {
 
   @Override

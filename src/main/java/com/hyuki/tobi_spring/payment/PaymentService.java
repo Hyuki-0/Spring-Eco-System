@@ -1,9 +1,9 @@
 package com.hyuki.tobi_spring.payment;
 
+import com.hyuki.tobi_spring.exrate.ExRateProvider;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component

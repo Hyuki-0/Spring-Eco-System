@@ -1,4 +1,4 @@
-package com.hyuki.tobi_spring.payment;
+package com.hyuki.tobi_spring.exrate;
 
 import java.io.IOException;
 import java.math.BigDecimal;
