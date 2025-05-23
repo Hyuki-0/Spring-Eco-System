@@ -1,5 +1,6 @@
 package com.hyuki.tobi_spring.exrate;
 
+import com.hyuki.tobi_spring.payment.ExRateProvider;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

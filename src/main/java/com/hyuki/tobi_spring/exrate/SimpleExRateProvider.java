@@ -1,5 +1,6 @@
 package com.hyuki.tobi_spring.exrate;
 
+import com.hyuki.tobi_spring.payment.ExRateProvider;
 import java.math.BigDecimal;
 
 public class SimpleExRateProvider implements ExRateProvider {

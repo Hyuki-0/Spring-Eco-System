@@ -2,6 +2,7 @@ package com.hyuki.tobi_spring.exrate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hyuki.tobi_spring.exrate.response.ExRateData;
+import com.hyuki.tobi_spring.payment.ExRateProvider;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.math.BigDecimal;
