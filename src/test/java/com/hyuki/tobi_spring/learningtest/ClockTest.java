@@ -35,8 +35,13 @@ public class ClockTest {
     LocalDateTime now = LocalDateTime.now(clock);
     LocalDateTime now2 = LocalDateTime.now(clock);
 
+    // 한 시간을 더 한 경우
+    LocalDateTime now3 = now2.plusHours(1);
+
     // then
     assertThat(now2).isEqualTo(now);
+
+    assertThat(now3).isEqualTo(now.plusHours(1));
   }
 }
 
