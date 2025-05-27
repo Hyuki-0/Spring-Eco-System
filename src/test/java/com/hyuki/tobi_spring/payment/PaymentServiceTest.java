@@ -5,7 +5,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.time.Clock;import java.time.LocalDateTime;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,7 +20,7 @@ class PaymentServiceTest {
   @BeforeEach
   void init() {
     // 외부 API라고 볼 수 있다.
-    clock = Clock.systemDefaultZone();
+    clock = Clock.fixed(Instant.now(), ZoneId.systemDefault());
   }
 
   // Collaborator들과 연관되어 있을 때, 항상 멱등한가? Test Double, Stub 활용
@@ -49,7 +52,6 @@ class PaymentServiceTest {
     LocalDateTime expectedValidUntil = now.plusMinutes(30);
 
     // then
-
     assertThat(payment.getValidUntil()).isEqualTo(expectedValidUntil);
   }
 }

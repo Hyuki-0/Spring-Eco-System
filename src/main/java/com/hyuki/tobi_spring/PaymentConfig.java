@@ -34,6 +34,7 @@ public class PaymentConfig {
   public ExRateProvider cachedExRateProvider() {
     return new CachedExRateProvider(exRateProvider());
   }
+
   @Bean
   public ExRateProvider exRateProvider() {
     return new WebApiExRateProvider();
