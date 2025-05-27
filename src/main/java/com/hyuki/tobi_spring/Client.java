@@ -1,7 +1,6 @@
 package com.hyuki.tobi_spring;
 
 import com.hyuki.tobi_spring.payment.PaymentService;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.BeanFactory;
@@ -9,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Client {
 
-  public static void main(String[] args) throws IOException, InterruptedException {
+  public static void main(String[] args) throws InterruptedException {
     BeanFactory beanFactory = new AnnotationConfigApplicationContext(PaymentConfig.class);
 
     PaymentConfig objectFactory = (PaymentConfig) beanFactory.getBean("paymentConfig");

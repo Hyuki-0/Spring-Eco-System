@@ -25,13 +25,13 @@ class PaymentServiceTest {
 
   // Collaborator들과 연관되어 있을 때, 항상 멱등한가? Test Double, Stub 활용
   @Test
-  void prepare() throws IOException {
+  void prepare() {
     getPayment(valueOf(100), valueOf(1_000));
     getPayment(valueOf(500), valueOf(5_000));
     getPayment(valueOf(1000), valueOf(10_000));
   }
 
-  private Payment getPayment(BigDecimal exRate, BigDecimal convertedAmount) throws IOException {
+  private Payment getPayment(BigDecimal exRate, BigDecimal convertedAmount) {
     PaymentService paymentService = new PaymentService(new ExRateProviderStub(exRate), clock);
     Payment payment = paymentService.prepare(1L, "USD", BigDecimal.TEN);
 
@@ -42,7 +42,7 @@ class PaymentServiceTest {
 
   @Test
   @DisplayName("validUntil_Success")
-  void validUntil_Success() throws IOException{
+  void validUntil_Success() {
     // given
     PaymentService paymentService = new PaymentService(new ExRateProviderStub(valueOf(1_000)), clock);
     Payment payment = paymentService.prepare(1L, "USD", BigDecimal.TEN);

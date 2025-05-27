@@ -24,7 +24,7 @@ class PaymentTest {
     LocalDateTime expectedValidUntil = LocalDateTime.now(clock).plusMinutes(30);
 
     // when
-    Payment payment = Payment.createdPrepared(1L, "USD", BigDecimal.TEN, valueOf(1_000), LocalDateTime.now(clock).plusMinutes(30));
+    Payment payment = Payment.createdPrepared(1L, "USD", BigDecimal.TEN, valueOf(1_000), LocalDateTime.now(clock));
 
     // then
     assertThat(payment.getConvertedAmount()).isEqualByComparingTo(valueOf(10_000));

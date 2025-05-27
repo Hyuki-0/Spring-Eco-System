@@ -31,7 +31,7 @@ public class PaymentServiceSpringTest {
 
 
   @Test
-  void convertedAmount() throws IOException, InterruptedException {
+  void convertedAmount() throws InterruptedException {
     // exRate: 1000
     Payment pa = paymentService.prepare(1L, "USD", BigDecimal.TEN);
     assertThat(pa.getExRate()).isEqualByComparingTo(valueOf(1_000));
@@ -46,7 +46,7 @@ public class PaymentServiceSpringTest {
 
   @Test
   @DisplayName("validUntil_Success")
-  void validUntil_Success() throws IOException{
+  void validUntil_Success() {
     // given
     Payment payment = paymentService.prepare(1L, "USD", BigDecimal.TEN);
 
