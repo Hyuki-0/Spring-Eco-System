@@ -1,5 +1,6 @@
 package com.hyuki.tobi_spring;
 
+import com.hyuki.tobi_spring.api.ExRateApiTemplate;
 import com.hyuki.tobi_spring.exrate.CachedExRateProvider;
 import com.hyuki.tobi_spring.payment.ExRateProvider;
 import com.hyuki.tobi_spring.exrate.SimpleExRateProvider;
@@ -37,6 +38,11 @@ public class PaymentConfig {
 
   @Bean
   public ExRateProvider exRateProvider() {
-    return new WebApiExRateProvider();
+    return new WebApiExRateProvider(apiTemplate());
+  }
+
+  @Bean
+  public ExRateApiTemplate apiTemplate(){
+    return new ExRateApiTemplate();
   }
 }
