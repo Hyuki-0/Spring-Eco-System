@@ -24,6 +24,14 @@ public class ExRateApiTemplate {
     };
   }
 
+  /*
+   * 디폴트 콜백을 직접 정의하기 위함이다.
+   * */
+  public ExRateApiTemplate(ApiExecutor defalutApiExecutor, ExRateExtractor defaultExRateExtractor) {
+    this.defalutApiExecutor = defalutApiExecutor;
+    this.defaultExRateExtractor = defaultExRateExtractor;
+  }
+
   public BigDecimal getForExRate(String url) {
     return this.getForExRate(url, this.defalutApiExecutor, this.defaultExRateExtractor);
   }
@@ -35,6 +43,7 @@ public class ExRateApiTemplate {
   public BigDecimal getForExRate(String url, ExRateExtractor exRateExtractor) {
     return this.getForExRate(url, defalutApiExecutor, this.defaultExRateExtractor);
   }
+
   public BigDecimal getForExRate(String url, ApiExecutor apiExecutor, ExRateExtractor exRateExtractor) {
     URI uri;
     try {
